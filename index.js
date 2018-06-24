@@ -79,11 +79,12 @@ class PrefixTree extends PrefixTreeNode {
 
   logAllWords(prefixesArray) {
     console.log('------ ALL WORD SUGGESTIONS ------');
-    prefixesArray.forEach(el => console.log(this.predictWord(el, 5)));
+    prefixesArray.forEach(el =>
+      console.log(el + ' ' + this.predictWord(el, 5))
+    );
   }
 }
 
 const PrefixTreeClass = new PrefixTree();
 textArray.forEach(el => PrefixTreeClass.addWord(el.toLowerCase()));
 PrefixTreeClass.logAllWords(prefixesArray);
-
